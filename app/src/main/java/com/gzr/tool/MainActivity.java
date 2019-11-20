@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gzr.tool.util.ScreenUtil;
+import com.gzr.tool.util.SharePref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,17 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //boolean first = SharePref.getBoolean("frist",true);
+        //if(first){
+            Intent intent = new Intent(this,WelcomeActivity.class);
+            startActivity(intent);
+        //}else{
+        //   initView();
+        //}
+    }
+
+    private void initView(){
         ButterKnife.bind(this);
 
         btnGetScreeninfo.setOnClickListener(this);
